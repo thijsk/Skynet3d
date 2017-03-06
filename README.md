@@ -1,5 +1,5 @@
-![](media/image1.png){width="6.260416666666667in"
-height="2.8541666666666665in"}SKYNET 3D V2.3.1 (Marlin RC8)
+<img src="media/image1.png" width="601" height="273" />SKYNET 3D V2.3.1
+(Marlin RC8)
 
 <https://www.facebook.com/skynet3ddevelopment>
 
@@ -44,8 +44,7 @@ unzip the entire contents into their respective folders.
 
 -   Open the Skynet3dV2.3.1 firmware folder and then open the
     configurations
-    folder![](media/image2.png){width="6.263888888888889in"
-    height="2.640277777777778in"}
+    folder<img src="media/image2.png" width="601" height="253" />
 
 -   Open the respective folder which corresponds to your printer setup.
     Eg mine is (A8- fullgraphicslcd-autolevel- front left sensor)
@@ -54,32 +53,26 @@ unzip the entire contents into their respective folders.
     corresponds to the configuration selected
 
 -   “Right click” and “copy” the configuration.h
-    file![](media/image3.png){width="6.263888888888889in"
-    height="6.2in"}
+    file<img src="media/image3.png" width="601" height="595" />
 
 -   “paste” the configuration.h file into the “SkynetV2.3” firmware
-    folder![](media/image4.png){width="6.263888888888889in"
-    height="4.247916666666667in"}
+    folder<img src="media/image4.png" width="601" height="407" />
 
 -   Now close this folder and exit out of the firmware folder.
 
 -   Open ‘’arduino-1.8.0’’ folder and then open
-    “arduino.exe”![](media/image5.png){width="6.263888888888889in"
-    height="3.3118055555555554in"}
+    “arduino.exe”<img src="media/image5.png" width="601" height="317" />
 
 -   Go to “File” “Open”
-    ![](media/image6.png){width="5.040277777777778in"
-    height="6.231944444444444in"}
+    <img src="media/image6.png" width="483" height="598" />
 
 -   Browse to the firmware folder and open
-    “SkynetV2.3.ino’’![](media/image7.png){width="6.260416666666667in"
-    height="6.364583333333333in"}
+    “SkynetV2.3.ino’’<img src="media/image7.png" width="601" height="610" />
 
 <!-- -->
 
 -   Go to “Tools” “Board” and select “Anet V1.0”
-    ![](media/image8.png){width="6.260416666666667in"
-    height="6.260416666666667in"}
+    <img src="media/image8.png" width="601" height="601" />
 
 -   Go to “Tools” “Port” and Select the relavent com port for your
     printer, mine is com4
@@ -88,13 +81,12 @@ unzip the entire contents into their respective folders.
 
     you can check your com port if you go to “device manager” and under
     “Ports (COM &LPT) you should have “ USB-SERIAL CH340” as shown below
-    ![](media/image9.png){width="4.4375in" height="5.84375in"}
+    <img src="media/image9.png" width="426" height="561" />
 
 Click the “upload” Button in arduino and wait for Skynet to compile and
 upload to your printer
 
-![](media/image10.png){width="3.7083333333333335in"
-height="1.2604166666666667in"}
+<img src="media/image10.png" width="356" height="121" />
 
 And that’s it!! Once Arduino says “done uploading” and you have the
 Marlin logo on your printers screen youre done! Well youre done
@@ -110,25 +102,22 @@ you will home to z and your nozzle will be no where near the bed
 -   Go to “file” “preferences”
 
 -   make sure the “printing window type” is set to “Pronterface UI”
-    ![](media/image11.png){width="2.53125in" height="1.125in"}
+    <img src="media/image11.png" width="243" height="108" />
 
 -   Go to “Machine” “Machine settings” and copy the setting exatly as
     below apart from “serial port” which you would set to the same as
     the previous steps (mine
-    Com4)![](media/image12.png){width="6.260416666666667in"
-    height="3.2083333333333335in"}
+    Com4)<img src="media/image12.png" width="601" height="308" />
 
 -   Now Click on the “load” button and load the “20mm cube.stl”
-    ![](media/image13.png){width="6.270833333333333in"
-    height="4.114583333333333in"}
+    <img src="media/image13.png" width="601" height="394" />
 
 Now you want to set your settings for your chosen material on the left
 side of cura (printing temps / speed/ infil etc…)
 
 -   Click the “Print” button next to “load” and youll get the
     “Pronterface UI”
-    window![](media/image14.png){width="6.260416666666667in"
-    height="3.7395833333333335in"}
+    window<img src="media/image14.png" width="601" height="359" />
 
 If you don’t have “operational” in this window then you may have set the
 wrong baudrate or com port in the “machine settings” – just go double
@@ -153,12 +142,10 @@ THEN RAISE THE NOZZLE OFF THE BED FOR THE NEXT STEP
     can see I ran that comand twice – first without a metal object below
     the sensor and secondly with a metal object below the sensor
 
-![](media/image15.png){width="6.260416666666667in"
-height="3.7395833333333335in"}
+<img src="media/image15.png" width="601" height="359" />
 
 -   Now hit the white “home” button to home all
-    axis.![](media/image16.png){width="0.625in"
-    height="0.6666666666666666in"}
+    axis.<img src="media/image16.png" width="60" height="63" />
 
 You will notice that the printer will home X and Y and then move the
 sensor to the center of the bed and lower itself until it is triggered
@@ -171,8 +158,7 @@ then it will raise to z10
     just a little bit of friction when moving the paper around.
 
 -   Now run an M114 command in Pronterface
-    UI![](media/image17.png){width="6.260416666666667in"
-    height="3.78125in"}
+    UI<img src="media/image17.png" width="601" height="363" />
 
 > You have now found your offset value – as you can see mine is z: -1.90
 
@@ -239,8 +225,7 @@ ready to print!
 
     M117 Printing...
 
--   ![](media/image18.png){width="3.3333333333333335in"
-    height="8.270833333333334in"}
+-   <img src="media/image18.png" width="320" height="794" />
 
 Go back to pronterface and hit “print” – allow your hotend and heatbed
 to get to temperature and watch in awe as you never have to touch those
