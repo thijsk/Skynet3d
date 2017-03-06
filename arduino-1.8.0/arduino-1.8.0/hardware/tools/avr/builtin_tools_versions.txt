@@ -1,3 +1,0 @@
-arduino.avrdude=6.3.0-arduino8
-arduino.arduinoOTA=1.0.0
-arduino.avr-gcc=4.9.2-atmel3.5.3-arduino2
