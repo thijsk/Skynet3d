@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta charset="utf-8" />
+  <meta charset="utf-8" />
+  <meta charset="utf-8" />
+  <title>Arduino Reference - Windows </title>
+  <link rel="shortcut icon" type="image/x-icon" href="http://arduino.cc/en/favicon.png">
+  <link rel='stylesheet' href='arduinoWideRender.css' 
+type='text/css' />
+    <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border: 2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  td.markup1 { border-bottom: 1px solid #ccf; }
+  div.faq { margin-left:2em; }
+  div.faq p.question { margin: 1em 0 0.75em -2em; font-weight:bold; }
+  div.faq hr { margin-left: -2em; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+.auto-style5 {
+	font-size: 11pt;
+}
+.auto-style7 {
+	font-family: Georgia, serif;
+}
+.auto-style8 {
+	font-weight: normal;
+}
+
+.auto-style11 {
+	text-align: center;
+}
+.auto-style13 {
+	text-align: left;
+}
+
+.auto-style14 {
+	font-family: Georgia, serif;
+	font-size: 11pt;
+}
+
+--></style>  <meta name='robots' content='index,follow' />
+
+  <meta name="verify-v1" content="TtxFIEJAB6zdJ509wLxjnapQzKAMNm9u0Wj4ho6wxIY=" />
+</head>
+<body>
+<div id="page">
+  <!--PageHeaderFmt-->
+  <!--/PageLeftFmt-->
+
+  <div id="pagetext">
+  <!--PageText-->
+<div id='wikitext'>
+<h2>&nbsp;</h2>
+	<h2 CLASS="western" STYLE="background: #ffffff">Getting Started with Intel® 
+	Galileo and Arduino IDE</h2>
+	<p STYLE="margin-bottom: 0.2in; border: none; padding: 0in"><em>
+	<font COLOR="#555555">This document explains how to connect your Intel<span style="font-size:9.5pt;line-height:107%;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Intel Clear&quot;;
+mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA">®</span> 
+	Galileo to the computer and upload your first 
+	sketch.</font></em><font COLOR="#555555"> </font></p>
+<p class='vspace'></p><p>(:*toc :)
+</p>
+	<h3>1 | Get an Intel<span style="font-size:9.5pt;line-height:107%;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Intel Clear&quot;;
+mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA">®</span> 
+	Galileo, a USB cable, and a 12V Power Supply</h3>
+<p class='vspace'></p>
+	<div style="width: 523px; height: 337px">&nbsp;<img alt="" height="366" src="galileo-motherboard.jpg" width="550" /></div>
+	<p ALIGN="CENTER" STYLE="margin-top: 0.22in; margin-bottom: 0in; background: #ffffff">
+	<font COLOR="#555555" FACE="Georgia, serif">
+	<font SIZE="2" STYLE="font-size: 11pt"><i><b>Figure 1 – </b></i>Intel® 
+	Galileo Gen2 Board</font></font></p>
+<p class='vspace' style="width: 761px; height: 43px">&nbsp;</p><div style="width: 513px; height: 292px">
+		<img alt="" height="300" src="microusb.jpg" width="400" /></div>
+	<p ALIGN="CENTER" STYLE="margin-top: 0.22in; margin-bottom: 0in; background: #ffffff">
+	<font COLOR="#555555" FACE="Georgia, serif">
+	<font SIZE="2" STYLE="font-size: 11pt"><i><b>Figure 2</b></i></font></font><font COLOR="#555555" FACE="Georgia, serif"><font SIZE="2" STYLE="font-size: 11pt"><i>- </i>
+	You’ll need one of these USB cables.</font></font></p>
+<p class='vspace' style="width: 761px; height: 43px">&nbsp;</p><div style="width: 513px; height: 292px">
+		<img alt="" height="300" src="gal-power-supply.jpg" width="449" /></div>
+	<p ALIGN="CENTER" STYLE="margin-top: 0.22in; margin-bottom: 0in; background: #ffffff">
+	<font COLOR="#555555" FACE="Georgia, serif">
+	<font SIZE="2" STYLE="font-size: 11pt"><i><b>Figure 3</b>- </i>You’ll also 
+	need one of these power cables.</font></font></p>
+<p class='vspace'>&nbsp;</p><h3>2 | Connect the board</h3>
+<p>To upload Arduino sketches the Intel<span style="font-size:9.5pt;line-height:107%;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Intel Clear&quot;;
+mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA">®</span> 
+Galileo board must be powered up and connected to your computer.&nbsp;
+	&nbsp;</p>
+	<p STYLE="font-style: normal; font-weight: normal">
+	&nbsp;</p>
+	<p class="auto-style14">
+	Plug in the DC power supply into an outlet and into DC barrel jack on your 
+	Intel<span style="font-size:9.5pt;line-height:107%;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Intel Clear&quot;;
+mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA">®</span> 
+	Galileo board. You should see the green power LED light up near the USB port 
+	on the board. NOTE: If you are using the DC power supply included with the 
+	Intel<span style="font-size:9.5pt;line-height:107%;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Intel Clear&quot;;
+mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA">® </span> 
+	Galileo make sure you fit the apropriate plug.</p>
+	<p STYLE="font-style: normal; font-weight: normal">&nbsp;</p>
+	<p STYLE="font-style: normal; font-weight: normal">
+	<img alt="" height="375" src="CAM00120.jpg" width="500" /></p>
+	<p ALIGN="CENTER" STYLE="margin-top: 0.07in; margin-bottom: 0.07in">
+	<font COLOR="#555555" FACE="Georgia, serif">
+	<font SIZE="2" STYLE="font-size: 11pt"><i><b>Figure 4</b></i> 
+	-&nbsp;Intel<span style="font-size:9.5pt;line-height:107%;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Intel Clear&quot;;
+mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA">®</span> 
+	Galileo board with DC power plugged in and power LED lit</font></font></p>
+	<p STYLE="margin-bottom: 0in">&nbsp;</p>
+	<p STYLE="margin-bottom: 0in"><font COLOR="#555555" FACE="Georgia, serif">
+	<font SIZE="2" STYLE="font-size: 11pt">Plug the micro-USB cables to the 
+	micro USB connector on the board.</font></font></p>
+	<p>&nbsp;</p>
+	<div style="width: 526px; height: 388px">
+		<img alt="" height="375" src="CAM00124.jpg" width="500" /><br />
+		<br />
+		<br />
+	</div>
+	<p ALIGN="CENTER" STYLE="margin-top: 0.07in; margin-bottom: 0.07in">
+	<font COLOR="#555555" FACE="Georgia, serif">
+	<font SIZE="2" STYLE="font-size: 11pt"><i><b>Figure 5</b></i> -<i>&nbsp;</i>Plug 
+	in USB cable into the micro USB port</font></font></p>
+	<p STYLE="margin-bottom: 0in">&nbsp;</p>
+	<p STYLE="margin-bottom: 0in"><font COLOR="#555555" FACE="Georgia, serif">
+	<font SIZE="2" STYLE="font-size: 11pt">Plug in other end of the usb cable to your computer. </font></font></p>
+	<p STYLE="margin-bottom: 0in">&nbsp;</p>
+	<div style="width: 583px; height: 210px">
+		<img alt="" height="213" src="imgC.gif" width="577" /><br />
+		<br />
+		<br />
+	</div>
+	<p ALIGN="CENTER" STYLE="margin-top: 0.07in; margin-bottom: 0.07in">
+	<font COLOR="#555555" FACE="Georgia, serif">
+	<font SIZE="2" STYLE="font-size: 11pt"><b><i>Figure 6</i></b> -<i>&nbsp;</i>Plug 
+	the other end of the USB cable into your computer USB port</font></font></p>
+	<p STYLE="margin-bottom: 0in">&nbsp;</p>
+	<p STYLE="margin-bottom: 0in"><font COLOR="#666666" FACE="Arial, serif">
+	<font class="auto-style5" SIZE="2"><span LANG="en">
+	<span class="auto-style7">Wait a moment for the board to boot up. If you are 
+	plugging in your board for the first time and using Windows your computer 
+	will begin a driver install process. Allow this to complete before contining 
+	on.&nbsp; </span></span></font></font></p>
+	<p STYLE="margin-bottom: 0in">&nbsp;</p>
+	<p STYLE="margin-bottom: 0in">&nbsp;</p>
+	<h3>3 | Open the blink example</h3>
+	<p>Open the LED blink example sketch: <strong>File  &gt; Examples &gt; 1.Basics &gt; Blink</strong>.
+	You should see a window similar to the one below.</p>
+<p class='vspace'></p><div><img alt="" src="img6.jpg" /><p ALIGN="CENTER" STYLE="margin-top: 0.07in; margin-bottom: 0.07in">
+		<font COLOR="#555555" FACE="Georgia, serif">
+		<font SIZE="2" STYLE="font-size: 11pt"><i><b>Figure 7</b></i> -<i>&nbsp;</i>Blink 
+		example loaded into Arduino IDE</font></font></p>
+	</div>
+	<h3>4 | Select your board</h3>
+<p>You'll need to select the Intel<span style="font-size:9.5pt;line-height:107%;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Intel Clear&quot;;
+mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA">®</span> 
+Galileo in the <strong>Tools &gt; Board</strong> 
+menu. 
+</p>
+<p class='vspace'></p><div>
+		<img alt="" src="select_galileo_board.png" height="287" width="477" /></div>
+	<p ALIGN="CENTER" STYLE="margin-top: 0.07in; margin-bottom: 0.07in">
+	<font COLOR="#555555" FACE="Georgia, serif">
+	<font SIZE="2" STYLE="font-size: 11pt"><i><b>Figure 8</b></i> -<i>&nbsp;</i>Select 
+	Intel<span style="font-size:9.5pt;line-height:107%;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Intel Clear&quot;;
+mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA">®</span> 
+	Galileo Gen2 from the <strong>Tools&gt;Board</strong> menu</font></font></p>
+	<h3>5 | Select your serial port</h3>
+<p>Select the serial device of the board from the Tools | Serial Port menu.  
+The easiest way to find what port the board is using is by disconnecting your 
+board, restarting the IDE, and re-opening the menu; the entry that disappears should be the 
+Intel<span style="font-size:9.5pt;line-height:107%;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Intel Clear&quot;;
+mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA">®</span> 
+Galileo board. Reconnect the board, restart the IDE, and select that serial port.&nbsp;  
+</p>
+	<h4>On Windows*</h4>
+	<p>The port is likely to be <strong><span class='wikiword'>COM3</span></strong> 
+	or higher in the Device Manager, like in Figure 9. <strong>
+	<span class='wikiword'>COM1</span></strong> and <strong><span class='wikiword'>COM2</span></strong> 
+	are usually reserved for hardware serial ports.  
+</p>
+	<p>&nbsp;</p>
+	<p><img src="galileo_port_device_manager.png" height="223" width="470" /></p>
+	<p class="auto-style11"><strong><em>Figure 9</em></strong> - Select <strong>
+	Intel Galileo Com Port (COM#)</strong></p>
+	<p>&nbsp;</p>
+	<div>
+		<img border="0" height="485" src="img14.PNG" width="500" /><br />
+		<p ALIGN="CENTER" STYLE="margin-top: 0.07in; margin-bottom: 0.07in">
+		<font COLOR="#555555" FACE="Georgia, serif">
+		<font SIZE="2" STYLE="font-size: 11pt"><i><b>Figure 10</b></i> -<i>&nbsp;</i>Select 
+		COM port from <strong>Tools&gt;Serial Port</strong><strong class="auto-style8"> 
+		menu is using Windows*</strong></font></font></p>
+		<p ALIGN="CENTER" STYLE="margin-top: 0.07in; margin-bottom: 0.07in">
+		&nbsp;</p>
+		<p STYLE="margin-top: 0.07in; margin-bottom: 0.07in" class="auto-style13">
+		Now the bottom right should match the COM port number of the 'Intel 
+		Galileo Virtual Com Port (COM#)" from the Device Manager, like in Figure 
+		11.</p>
+	</div>
+	<p>
+	<img border="0" height="600" src="img13.PNG" width="500" /></p>
+	<p class="auto-style11"><strong><em>Figure 11 </em>- </strong>The COM number 
+	should match the Intel Galileo Virtual Com Port (COM#).&nbsp;</p>
+	<h4>On Linux*</h4>
+	<p>The port is likely to be <strong><span class='wikiword'>
+	/dev/ttyACM0</span></strong>.  
+</p>
+	<p>&nbsp;</p>
+	<div><img alt="" src="linux_port_select.png" height="480" width="525" /><p ALIGN="CENTER" STYLE="margin-top: 0.07in; margin-bottom: 0.07in">
+		<font COLOR="#555555" FACE="Georgia, serif">
+		<font SIZE="2" STYLE="font-size: 11pt"><b><i>Figure 1</i></b>2 -<i>&nbsp;</i>Select 
+		/dev/ttyAMC0 from the <strong>Tools&gt;Serial Port</strong> menu is using 
+		Linux*</font></font></p>
+	</div>
+	<h4>On Mac OS X*  
+</h4>
+	<p>The port is likely to be <strong><span class='wikiword'>
+	/dev/cu.usbmodemxxxx</span></strong>.  
+</p>
+	<p>&nbsp;</p>
+	<div><img alt="" src="osx_port_select.png" height="395" width="576" /></div>
+	<p ALIGN="CENTER" STYLE="margin-top: 0.07in; margin-bottom: 0.07in">
+	<font COLOR="#555555" FACE="Georgia, serif">
+	<font SIZE="2" STYLE="font-size: 11pt"><i><b>Figure 13</b></i> -<i>&nbsp;</i>Select 
+	/dev/cu.usbmodemxxxx from the <strong>Tools&gt;Serial Port</strong> menu is 
+	using OS X*</font></font></p>
+	<h3>6 | Upload and Run the Program</h3>
+<p>Click the Upload button in the upper left to load and run the sketch on your 
+board.</p>
+	<p>&nbsp;</p>
+	<div>
+		<img border="0" height="600" src="img12.PNG" width="500" /></div>
+	<p ALIGN="CENTER" STYLE="margin-top: 0.07in; margin-bottom: 0.07in">
+	<font COLOR="#555555" FACE="Georgia, serif">
+	<font SIZE="2" STYLE="font-size: 11pt"><i><b>Figure 14</b></i> -<i>&nbsp;</i>Click 
+	the <strong>Upload</strong> button to upload and launch your sketch 
+	</font></font></p>
+<p class='vspace'>You should see a "Done Uploading" and a "Transfer complete" 
+when it has uploaded, like in Figure 15.</p>
+	<p class='vspace'>
+	<img border="0" height="266" src="img15.PNG" width="500" /></p>
+	<p class="auto-style11"><strong><em>Figure 15</em></strong> - You should see 
+	"Transfer complete"</p>
+	<p>&nbsp;</p>
+	<p>The DS2 LED on your board should now blink with a 1 
+	second delay.</p>
+	<div style="width: 552px; height: 343px">
+		<img alt="" height="366" src="galileo-motherboard_blinkLED2.jpg" width="550" /></div>
+</div>
+
+
+  </div>
+
+</div>
+<p ALIGN="CENTER" STYLE="margin-top: 0.07in; margin-bottom: 0.07in">
+<font COLOR="#555555" FACE="Georgia, serif">
+<font SIZE="2" STYLE="font-size: 11pt"><i><b>Figure 16</b></i> -<i>&nbsp;</i>The LED 
+closest to the USB port should now blink with a 1 second delay.</font></font></p>
+</body>
+</html>

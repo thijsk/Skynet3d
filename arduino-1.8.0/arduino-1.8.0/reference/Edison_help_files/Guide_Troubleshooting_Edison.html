@@ -1,0 +1,388 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>Arduino Reference - Windows </title>
+  <link rel="shortcut icon" type="image/x-icon" href="http://arduino.cc/en/favicon.png">
+  <link rel='stylesheet' href='arduinoWideRender.css' 
+type='text/css' />
+    <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border: 2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  td.markup1 { border-bottom: 1px solid #ccf; }
+  div.faq { margin-left:2em; }
+  div.faq p.question { margin: 1em 0 0.75em -2em; font-weight:bold; }
+  div.faq hr { margin-left: -2em; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+					 .auto-style1 {
+						 font-family: Georgia, "Times New Roman", Times, serif;
+						 font-size: 90%;
+					 }
+					 .auto-style3 {
+	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+	font-size: medium;
+}
+.auto-style4 {
+	font-size: smaller;
+}
+
+.auto-style5 {
+	font-size: 14px;
+}
+
+--></style>  <meta name='robots' content='index,follow' />
+
+  <meta name="verify-v1" content="TtxFIEJAB6zdJ509wLxjnapQzKAMNm9u0Wj4ho6wxIY=" />
+</head>
+  
+<div>
+<h2>Arduino IDE Troubleshooting</h2>
+<p>(:*toc:)
+</p>
+	<h4>Errors running a sketch</h4>
+	<ul>
+		<li><a name="upload"></a><a href="#upload_sketch_1" name="upload">Why I can't upload my programs to the Intel<span style="font-size:9.5pt;line-height:107%;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Intel Clear&quot;;
+mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA">®</span> 
+	Edison board?</a></li>
+		<li><a href="#upload_sketch_2">Error: 
+Retry 0: Got TIMEOUT when trying to connect?</a></li>
+		<li><a href="#upload_sketch_3"><span class="auto-style5">Permission Denied when trying to 
+upload a sketch</span>?</a></li>
+	</ul>
+	<h4>Windows* Related</h4>
+	<ul>
+		<li><a href="#windows_1">Why does the Arduino software freeze when I try to upload a program?  (on Windows)?</a></li>
+		<li><a href="#windows_2">What should I do if I get an error when launching arduino.exe (on Windows)?</a></li>
+		<li><a href="#windows_3">What can I do about cygwin conflicts (on Windows)?</a></li>
+		<li><a href="#windows_4">Why does do the Arduino software and the Tools menu take a long time to open (on Windows)?</a></li>
+	</ul>
+	<h4>Mac OS X* Related</h4>
+	<ul>
+		<li><a href="#osx_1">Why do I get "Build folder disappeared or could not be written" (on Mac OS X)?</a></li>
+		<li><a href="#osx_2">Why doesn't the Arduino software run after I updated the Java (on Mac OS X)?</a></li>
+		<li><a href="#osx_3">Why won't Arduino run on old versions of Mac OS X?</a></li>
+		<li><a href="#osx_4">What if I get a gnu.<span>io.PortInUseException</span> when uploading code or using the serial monitor (on 
+Mac OS X)?</a></li>
+	</ul>
+	<h4>Miscellaneous</h4>
+	<ul>
+		<li><a href="#misc_1">Why do I get a java.<span>lang.StackOverflowError</span> when I try to compile my program?</a></li>
+		<li><a href="#misc_2">What if my board doesn't turn on (the green power LED doesn't light up)?</a></li>
+		<li><a href="#misc_3">What do I do if I get an <span>UnsatisfiedLinkError</span> error (about native library librxtxSerial.jnilib) when launching Arduino?</a></li>
+		<li><a href="#misc_4">What about the error "Could not find the main class."?</a></li>
+		<li><a href="#misc_5">Why does my sketch appear to upload successfully but not do anything?&nbsp;&nbsp;</a></li>
+		<li><span style="background-color:transparent"><a href="#misc_6">Why don't I get a PWM (an analog output) when I call analogWrite() on pins &nbsp;6, 9, 10, or 11?</a></span></li>
+		<li><a href="#misc_7">Why do I get errors about undeclared functions or undeclared types?</a></li>
+	</ul>
+	<p>&nbsp;</p>
+	<h3>Errors Running a Sketch</h3>
+	<h4><a name="upload_sketch_1">Why I can't upload my programs to the Intel<span style="font-size:9.5pt;line-height:107%;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Intel Clear&quot;;
+mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA">®</span> 
+	Edison board?</a></h4>
+	<p>&nbsp;</p>
+<p>There are many pieces involved in getting a program onto your Arduino board, and if any of them aren't right, the upload can fail.  They include: the drivers for the board, the board and serial port selections in the Arduino software, access to the serial port, the physical connection to the board, the firmware on the 
+Edison and more. The first step to always try is a complete reboot of the Edison 
+board and your computer. When rebooting the Edison it is advised to unplug the 
+power instead of using the "reboot" button on the board. If a full reboot does 
+not solve your issues here are some specific suggestions for troubleshooting each of the pieces.
+</p>
+	<p>&nbsp;</p>
+<p><em>Arduino Software</em>
+</p>
+	<p>&nbsp;</p>
+<ul><li>Make sure you have the right item selected in the <strong>Tools &gt; Board</strong> 
+		menu. Make sure that you have selected the proper board from the <strong>Tools &gt; Board</strong> 
+		depending on which board you are using (Edison, Galileo Gen1, Galileo 
+		Gen2).&nbsp;
+</li>
+	</ul>
+	<p>&nbsp;</p>
+	<ul>
+<li>Then, check that the proper port is selected in the <strong>Tools &gt; Serial Port</strong> menu (if your port doesn't appear, try restarting the IDE with the board connected to the computer).  On the Mac, the serial port should be something like /dev/tty.usbmodem1a123.  On Linux, it should be /dev/ttyACM0 
+		or similar. On Windows, it will be a COM port but you'll need to check 
+		in the Device Manager (under Ports) to see which one. If you don't seem 
+		to have a serial port for your Intel board, see the following information about drivers.
+</li>
+	</ul>
+	
+	<p>&nbsp;</p>
+	
+	<ul>
+		<li>If you are having trouble with the Arduino IDE on Linux make 
+sure you have Java installed. To check open a terminal and type in "java" and 
+hit enter. If you get an error of "The program 'java' can noe found..." type in 
+"sudo 
+apt-get install default.jre"
+To install Java. You will have to enter your password when using sudo.</li>
+		<li>
+		<p>&nbsp;</p>
+		</li>
+	</ul>
+	
+<p><em>Drivers</em>
+</p>
+	<p>&nbsp;</p>
+	<ul>
+		<li>Drivers provide a way for software on your computer 
+	(i.e. the Arduino IDE software) to talk to your hardware.&nbsp; Driver 
+		installation is only required if you are using a Windows PC to 
+	program the Edison. To check if you have all the drivers installed open 
+	Device Manager ( open start menu and type "Device Manger" into the search 
+		bar) and check if you have any unknown devices. If this is the case 
+		go to this link and scroll to Drivers Software to download the latest 
+		drivers for Windows:<a href="http://downloadmirror.intel.com/24271/eng/IntelEdisonDriverSetup1.0.0.exe">&nbsp;</a><span style="font-size:10.5pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black;mso-ansi-language:EN-US;
+mso-fareast-language:EN-US;mso-bidi-language:AR-SA"><a href="http://www.intel.com/support/edison/sb/CS-035180.htm">http://www.intel.com/support/edison/sb/CS-035180.htm</a>&nbsp;</span></li>
+	</ul>
+	<p>&nbsp;</p>
+<ul><li>On Linux, the Intel Edison board may show up as a device of the form 
+	/dev/ttyACM0. This device is not supported by the standard version of the RXTX library that the Arduino software uses for serial communication.  The Arduino software download for Linux includes a version of the RXTX library patched to also search for these /dev/ttyACM* devices.  There's also <a href="https://launchpad.net/ubuntu/+source/rxtx/2.2pre2-3" rel="nofollow">an Ubuntu package</a> (for 11.04) which includes support for these devices.  If, however, you're using the RXTX package from your distribution, you may need to symlink from /dev/ttyACM0 to /dev/ttyUSB0 (for example) so that the serial port appears in the Arduino software.
+</li>
+	</ul>
+	<p>&nbsp;</p>
+<p><em>Access to the Serial Port</em>
+</p>
+	<p>&nbsp;</p>
+<ul><li>On Windows, if the software is slow to start or crashes on launch, or the Tools menu is slow to open, you may need to disable Bluetooth serial ports or other networked COM ports in the Device Manager.  The Arduino software scans all the serial (COM) ports on your computer when it starts and when you open the Tools menu, and these networked ports can sometimes cause large delays or crashes.  
+</li>
+	</ul>
+	<p>&nbsp;</p>
+	<ul>
+<li>Check that you're not running any programs that scan all serial ports, like USB Cellular Wifi Dongle software (e.g. from Sprint or Verizon), PDA sync applications, Bluetooth-USB drivers (e.g. <span>BlueSoleil</span>), virtual daemon tools, etc.
+</li>
+	</ul>
+	<p>&nbsp;</p>
+	<ul>
+<li>Make sure you don't have firewall software that blocks access to the serial port (e.g. <span>ZoneAlarm</span>).
+</li>
+	</ul>
+	<p>&nbsp;</p>
+	<ul>
+<li>You may need to quit Processing, PD, vvvv, etc. if you're using them to read data over the USB or serial connection to the Arduino board.</li>
+	</ul>
+	<p>&nbsp;</p>
+	<ul>
+<li>On Linux, you might try running the Arduino software as root, at least temporarily to see if fixes the upload.
+		To do this open a terminal, navigate to your Arduino IDE install folder 
+		and launch with "sudo ./arduino". You will have to enter your password.&nbsp;
+</li>
+	</ul>
+	<p>&nbsp;</p>
+<p><em>Physical Connection</em>
+</p>
+	<p>&nbsp;</p>
+<ul><li style="width:744px;height:80px">First make sure your board is on (the green LED is on) and connected to the computer.
+		If your board is not connected properly follow the instructions at:
+		<a href="https://software.intel.com/en-us/articles/getting-started-with-the-intel-edison-board-on-windowshttps://software.intel.com/en-us/articles/getting-started-with-the-intel-edison-board-on-windows">
+		https://software.intel.com/en-us/articles/getting-started-with-the-intel-edison-board-on-windows</a></li>
+	</ul>
+	<p>&nbsp;</p>
+	<ul>
+		<li>Try uploading with nothing connected to the board (apart from the USB cable, of course).
+		
+		</li>
+	</ul>
+	<p>&nbsp;</p>
+	<ul>
+		<li>Make sure the board isn't touching anything metallic or conductive.
+		
+		</li>
+	</ul>
+	<p>&nbsp;</p>
+	<ul>
+		<li>Try a different USB cable; sometimes they don't work.
+</li>
+	</ul>
+	
+	<p>&nbsp;</p>
+	
+<p><i>Firmware</i></p>
+	<p>&nbsp;</p>
+<ul><li>Make sure the firmware on your Edison is up to date. To flash the latest firmware follow the steps at:<a href="http://www.intel.com/support/edison/sb/CS-035286.htm">&nbsp;</a><ul>
+	<li>Windows: 
+	https://software.intel.com/en-us/articles/intel-edison-flashing-firmware-on-windows-wired</li>
+	</ul>
+	</li>
+	<ul>
+		<li>OS X: 
+		https://software.intel.com/en-us/articles/intel-edison-flashing-firmware-on-os-x-wired</li>
+		<li>Linux: 
+		https://software.intel.com/en-us/articles/intel-edison-flashing-firmware-on-windows-wired</li>
+	</ul>
+	</ul>
+	<p>&nbsp;</p>
+<p><br>
+</p>
+<p>If it still doesn't work, you can ask for help 
+<a href="https://communities.intel.com/community/makers/edison/forums/content" rel="nofollow">in the forum</a>.  Please include the following information:
+</p>
+<ul><li>Your operating system.
+</li>
+<li>What kind of board you have.&nbsp;</li>
+<li>Whether or not you were ever able to upload to the board.  If so, what were you doing with the board before / when it stopped working, and what software have you recently added or removed from your computer?
+</li>
+<li>The messages displayed when you try to upload with verbose output enabled.  To do this, hold down the shift key while clicking on the upload button in the toolbar.</li></ul>
+<h4 style="line-height:1.2;margin:20px 0px 0px;"><a name="upload_sketch_2">Error: 
+Retry 0: Got TIMEOUT when trying to connect?</a></h4>
+	<p style="line-height:1.2;margin:20px 0px 0px;" class="auto-style3">&nbsp;</p>
+	<ul>
+		<li>
+		<p style="margin:0px 0px 20px;line-height:1.4;font-weight:normal"><span>
+		Try logging into your board via SSH, or serial, and delete or rename /sketch/sketch.elf file, and then reboot, or at minimum kill the existing running sketch.elf process. Its particularly an issue with porting over a simple Arduino example, or running the AnalogReadSerial, or DigitalReadSerial &nbsp;examples from the IDE.&nbsp;&nbsp;The Intel IoT platforms&nbsp;share the USB connection with the Serial Monitor, unlike a standard Arduino.</span></p>
+		</li>
+		<li>
+		<p style="margin:0px 0px 20px;line-height:1.4;font-family:Arial,Tahoma,Helvetica,sans-serif;font-size:14px;font-weight:normal">
+		<span class="auto-style1">This may also help for&nbsp;</span><code style="line-height:1.6em"><span class="auto-style1">Retry 0: Timeout on pathname</span></code><span class="auto-style1">&nbsp;and&nbsp;</span><code style="line-height:1.6em"><span class="auto-style1">Transfer Incomplete</span></code><span class="auto-style1">. This error may occur if you plug in two Micro-USB cables into the Arduino breakout board.&nbsp; The first cable (when plugged into the middle micro-USB port) will reveal a number of ports specifically for use with Arduino. If you plug in a second cable, you will get two more which are useful for getting terminal access to Edison but will confuse Arduino IDE.&nbsp; 
+		Try removing the second USB cable.</span></p>
+		</li>
+	</ul>
+<h4 style="font-size:18px;line-height:1.2;margin:0px;">
+<a name="upload_sketch_3">
+<span class="auto-style4">Getting <em>Permission Denied</em> when trying to 
+upload a sketch</span>?</a></h4>
+<ul style="margin:1.6em 0px 20px;padding:0px 0px 0px 30px;list-style-position:outside;overflow:hidden;font-weight:normal;line-height:16.7999992370605px" class="auto-style1"><li style="margin-bottom:10px;padding-left:10px">
+	(on Windows) Be sure to select the Virtial COM Port and&nbsp;<strong>NOT</strong>&nbsp;the standard COM Port in the port dropdown</li>
+<li style="margin-bottom:10px;padding-left:10px">If you are using a 12V adapter to power your board, be sure that your micro-USB cable is connected to&nbsp;<strong>middle</strong>&nbsp;USB port</li>
+<li style="margin-bottom:10px;padding-left:10px">You can follow this&nbsp;<a href="https://www.youtube.com/watch?v=lDKM7UKUL5A" rel="nofollow" style="color:rgb(0,113,197)">step-by-step tutorial</a>&nbsp;for proper setup</li></ul>
+<h4>Windows* Related</h4>
+	<h4><a name="windows_1">Why does the Arduino software freeze when I try to upload a program?  (on Windows)?</a></h4>
+<p>This might be caused by a conflict with the Logitech process '<span>LVPrcSrv</span>.exe'.  Open the Task Manager and see if this program is running, and if so, kill it before attempting the upload.  <a href="http://lists-archives.org/mingw-users/03939-as-exe-hanging-intermittently-solved.html" rel="nofollow">more information</a>
+</p>
+<h4><a name="windows_2">What should I do if I get an error when launching arduino.exe (on Windows)?</a></h4>
+<p>If you get an error when double-clicking the arduino.exe executable on Windows, for example:
+</p>
+<p><code>Arduino has encountered a problem and needs to close.</code>
+</p>
+<p>you'll need to launch Arduino using the run.bat file.  Please be patient, the Arduino environment may take some time to open.</p>
+<h4><a name="windows_3">What can I do about cygwin conflicts (on Windows)?</a></h4>
+<p>If you already have cygwin installed on your machine, you might get an error like this when you try to compile a sketch in Arduino:
+</p>
+<p><code> 6 [main] ? (3512) C:\Dev\arduino-0006\tools\avr\bin\avr-gcc.exe: *** fatal error - C:\Dev\arduino-0006\tools\avr\bin\avr-gcc.exe: *** system shared memory version mismatch detected - 0x75BE0084/0x75BE009C.</code>
+</p>
+<p><code>This problem is probably due to using incompatible versions of the cygwin DLL.</code>
+</p>
+<p><code>Search for cygwin1.dll using the Windows Start-&gt;Find/Search facility and delete all but the most recent version.  The most recent version *should* reside in x:\cygwin\bin, where 'x' is the drive on which you have installed the cygwin distribution.  Rebooting is also suggested if you are unable to find another cygwin DLL.</code>
+</p>
+<p>If so, first make sure that you don't have cygwin running when you use Arduino.  If that doesn't help, you can try deleting cygwin1.dll from the Arduino directory and replacing it with the cygwin1.dll from your existing cygwin install (probably in c:\cygwin\bin).  
+</p>
+<p><em>Thanks to karlcswanson for the suggestion.</em>
+</p>
+<h4><a name="windows_4">Why does do the Arduino software and the Tools menu take a long time to open (on Windows)?</a></h4>
+<p>If the Arduino software takes a long time to start up and appears to freeze when you try to open the Tools menu, there by a conflict with another device on your system.  The Arduino software, on startup and when you open the Tools menu, tries to get a list of all the COM ports on your computer.  It's possible that a COM port created by one of the devices on your computer slows down this process.  Take a look in the Device Manager.  Try disabling the devices that provide COM ports (e.g. Bluetooth devices).
+&nbsp;</p>
+	<h3>Mac OS X* Related</h3>
+	<h4><a name="osx_1">Why do I get "Build folder disappeared or could not be written" (on Mac OS X)?</a></h4>
+<p>Did you drag the Arduino.app out of the disk image (and into, say, your Applications folder)?  If not, you won't be able to upload the examples.
+<a name="macupdate"></a>
+</p>
+<h4><a name="osx_2">Why doesn't the Arduino software run after I updated the Java (on Mac OS X)?</a></h4>
+<p>The latest Java update from Apple attempts to use 64-bit version of native libraries, but the Arduino application comes with a 32 bit version of the RXTX library.  If you launch Arduino, you'll get an error like:
+</p>
+<p><code>Uncaught exception in main method: java.<span>lang.UnsatisfiedLinkError</span>: /Applications/arduino-0016/Arduino 16.app/Contents/Resources/Java/librxtxSerial.jnilib: no suitable image found.  Did find: /Applications/arduino-0016/Arduino 16.app/Contents/Resources/Java/librxtxSerial.jnilib: no matching architecture in universal wrapper</code>
+</p>
+<p>To fix this, click on the Arduino application (e.g. <strong>Arduino 16.app</strong>) in the Finder, and select <strong>Get Info</strong> from the <strong>File</strong> menu.  In the info panel, click the <strong>Open in 32 Bit Mode</strong> checkbox.   You should then be able to launch Arduino normally.
+<a name="stackoverflow"></a>
+</p>
+<h4><a name="osx_3">Why won't Arduino run on old versions of Mac OS X?</a></h4>
+<p>If you get an error like this:
+</p>
+<pre>Link (dyld) error: 
+
+dyld: /Applications/arduino-0004/Arduino 04.app/Contents/MacOS/Arduino Undefined symbols: 
+/Applications/arduino-0004/librxtxSerial.jnilib undefined reference to _printf$LDBL128 expected to be defined in /usr/lib/libSystem.B.dylib 
+</pre>
+<p>you probably need to upgrade to Max OS X 10.3.9 or later.  Older versions have incompatible versions of some system libraries.
+</p>
+<p>Thanks to Gabe462 for the report.
+</p>
+<h4><a name="osx_4">What if I get a gnu.<span>io.PortInUseException</span> when uploading code or using the serial monitor (on 
+Mac OS X)?</a></h4>
+<pre>Error inside Serial.&lt;init&gt;() 
+gnu.io.PortInUseException: Unknown Application 
+     at gnu.io.CommPortIdentifier.open(CommPortIdentifier.java:354) 
+     at processing.app.Serial.&lt;init&gt;(Serial.java:127) 
+     at processing.app.Serial.&lt;init&gt;(Serial.java:72) 
+</pre>
+<p>This probably means that the port is actually in use by another application.  Please make sure that you're not running other programs that access serial or USB ports, like PDA sync application, bluetooth device managers, certain firewalls, etc.  Also, note that some programs (e.g. Max/MSP) keep the serial port open even when not using it - you may to need to close any patches that use the serial port or quit the application entirely.
+</p>
+<p>If you get this error with Arduino 0004 or earlier, or with Processing, you'll need to run the <code>macosx_setup.command</code>, and then restart your computer.  Arduino 0004 includes a modified version of this script that all users need to run (even those who ran the one that came with Arduino 0003).  You may also need to delete the contents of the <strong>/var/spool/uucp</strong> directory.
+&nbsp;</p>
+	<h3>Miscellaneous</h3>
+	<h4><a name="misc_1">Why do I get a java.<span>lang.StackOverflowError</span> when I try to compile my program?</a></h4>
+<p>The Arduino environment does some preliminary processing on your sketch by manipulating the code using regular expressions.  This sometimes gets confused by certain strings of text.  If you see an error like:
+</p>
+<pre>java.lang.StackOverflowError
+at java.util.Vector.addElement(Unknown Source)
+at java.util.Stack.push(Unknown Source)
+at com.oroinc.text.regex.Perl5Matcher._pushState(Perl5Matcher.java) 
+</pre>
+<p>or: 
+</p>
+<pre>	at com.oroinc.text.regex.Perl5Matcher._match(Perl5Matcher.java)
+	at com.oroinc.text.regex.Perl5Matcher._match(Perl5Matcher.java)
+	at com.oroinc.text.regex.Perl5Matcher._match(Perl5Matcher.java)
+	at com.oroinc.text.regex.Perl5Matcher._match(Perl5Matcher.java)
+	at com.oroinc.text.regex.Perl5Matcher._match(Perl5Matcher.java)
+	at com.oroinc.text.regex.Perl5Matcher._match(Perl5Matcher.java)
+	at com.oroinc.text.regex.Perl5Matcher._match(Perl5Matcher.java) 
+</pre>
+<p>this is what's happening.  Look for unusual sequences involving "double-quotes", "single-quotes", \backslashes, comments, etc.  For example, missing quotes can cause problems and so can the sequence '\"' (use '"' instead).<a name="power"></a></p>
+<h4><a name="misc_2">What if my board doesn't turn on (the green power LED doesn't light up)?</a></h4>
+<p>Make sure that you are powering your board correctly according to this 
+guide:&nbsp;https://software.intel.com/en-us/articles/intel-edison-arduino-expansion-board-assembly. 
+The most common issues are that the switch near the USB ports is flipped in the 
+wrong direction or your computer isn't supplying enough power through the USB 
+port.&nbsp; In the case of the latter, power your board with a 7-15V DC power 
+supply.</p>
+	<p>&nbsp;</p>
+<h4><a name="misc_3">What do I do if I get an <span>UnsatisfiedLinkError</span> error (about native library librxtxSerial.jnilib) when launching Arduino?</a></h4>
+<p>If you get an error like this when launching Arduino:
+</p>
+<p><code>Uncaught exception in main method: java.<span>lang.UnsatisfiedLinkError</span>: Native Library /Users/anu/Desktop/arduino-0002/librxtxSerial.jnilib already loaded in another classloader</code>
+</p>
+<p>you probably have an old version of the communications library lying around.  Search for comm.jar or jcl.jar in /System/Library/<span>Frameworks/JavaVM</span>.framework/ or in directories in your CLASSPATH or PATH environment variables. (reported by Anurag Sehgal)
+</p>
+<h4><a name="misc_4">What about the error "Could not find the main class."?</a></h4>
+<p>If you get this error when launching Arduino:
+</p>
+<p><code>Java Virtual Machine Launcher: Could not find the main class. Program will exit.</code>
+</p>
+<p>make sure that you correctly extracted the contents of the Arduino .zip file - in particular that the <strong>lib</strong> directory is directly inside of the Arduino directory and contains the file <strong>pde.jar</strong>.
+<a name="serialport"></a>
+</p>
+<h4><a name="misc_5">Why does my sketch appear to upload successfully but not do anything?</a>&nbsp;</h4>
+<p><span style="line-height:1.5;background-color:transparent">Check for a noisy power supply.  It's possible this could cause the chip to lose its sketch. If the power LED on the Edison board is flashing or flickering the system is resetting and cannot run any sketches. If you are using a battery to power the Edison make sure it is above 7 volts. If you are running off of USB power and have multiple sensors/servos plugged into your board there might not be enough power to run the logic. Unplug the sensors or servos or plug your Edison into the wall through the barrel jack and try loading the sketch again.&nbsp;</span><a name="size"></a></p>
+<h4><span style="background-color:transparent"><a name="misc_6">Why don't I get a PWM (an analog output) when I call analogWrite() on pins &nbsp;6, 9, 10, or 11?</a></span></h4>
+<p>The Edison is only capable of outputting a PWM on four pins at a time. By default the swizzler jumpers 
+(J11 and J12) are set so that pins 3,5,6, and 9 are capable of PWM output. you can switch this to pins 3,5,10, and 11 by moving the swizzler. However you will not be able to output more than 4 PWMs at a time. For more information about the pins and adjusting the swizzler please see:&nbsp;<a href="http://www.emutexlabs.com/project/215-intel-edison-gpio-pin-multiplexing-guide.">http://www.emutexlabs.com/project/215-intel-edison-gpio-pin-multiplexing-guide</a>&nbsp;</p>
+<h4><a name="misc_7">Why do I get errors about undeclared functions or undeclared types?</a></h4>
+<p>The Arduino environment attempts to automatically generate prototypes for your functions, so that you can order them as you like in your sketch.  This process, however, isn't perfect, and sometimes leads to obscure error messages.
+</p>
+<p>If you declare a custom type in your code and create a function that accepts or returns a value of that type, you'll get an error when you try to compile the sketch.  This is because the automatically-generated prototype for that function will appear above the type definition.  
+</p>
+<p>If you declare a function with a two-word return type (e.g. "unsigned int") the environment will not realize it's a function and will not create a prototype for it.  That means you need to provide your own, or place the definition of the function above any calls to it.&nbsp;</p>
+</div>
+</div>
+  
+
+</div>
