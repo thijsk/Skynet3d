@@ -1,0 +1,33 @@
+Skynet3d firmware by Scou + Oderwat- has been evolving since it was first started. 
+were now at the point where there are 2 different approaches to the skynet firmware which evolve seperately.
+
+theres the Facebook version- By Scou. 
+I take what Oderwat has released on Github and add in my custom profiles- written guides- troubleshooting- wiring diagrams and all the stuff you 
+should hopefully need into one neat package to make installing, using and troubleshooting as easy as i can humanly make possible.
+
+The second being the github version. Implemented by OderWat With some input and suggestions from the community. https://github.com/SkyNet3D/Marlin << this is the devel branch of skynet- 
+this will be the latest and most up to date version ofSkynet3d firmware and wont follow the same versioning as the facebook release.
+this version will  be further ahead than the fb release and will resemble as close to stock marlin as possible whilst having full anet support.  
+it will not have all the profiles, guides and newbie friendly content that have become standard with the facebook releases
+
+
+New things in Skynet V2.3.2 (Marlin RC8 Bugfix)- based on OderWats latest Devel branch as of (24/2/17)
+
+1. Added support for the Reprap Discount Smart controller + 3d touch sensor (wiring harness needed) 
+	(RepRap display guide http://www.thingiverse.com/thing:2103748)
+	(3d touch sensor guide http://www.thingiverse.com/thing:2091529)
+2.Added support for Endstop interrupts which will save many cpu cycles ( changes in firmware + arduino ide Anet hardware profile) 
+3.Lowered EXTRUDE_MINTEMP
+4.lowered DEFAULT_MAX_ACCELERATON
+5.Lowered DEFAULT_ACCELERATION
+5.LOWERED DEFAULT_TRAVEL_ACCELERATION
+5.lowered DEFAULT_ZJERK
+6 CHANGED ANET BUTTON DETECTION RANGES AND RESOLUTION (ultra.cpp)
+7.Manual Mesh leveling fix
+8.M600 filament change
+9. whole new install guide - z offset method and autobed levelling troubleshoot
+10.  FULL A2 Support  including configuration profiles and Sensor.stl mounts
+
+
+
+

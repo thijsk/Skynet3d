@@ -1,0 +1,57 @@
+2014-08-05 (v2.4):
+	- For some reason antivirus software falsely detects AVRDUDESS as malware when using HttpWebRequest to check for updates, using raw sockets seems to fix it
+
+2014-07-13 (v2.3):
+	- Updated AVRDUDE to v6.1
+	- USB option in port drop down list is now lower case
+	- Automatically prepend 0x to fuse hex values
+	- Fixed issue with spaces when setting avrdude.conf location
+
+2014-01-02 (v2.2):
+	- Fixed USBasp frequency not loading from presets for some users
+	- Fixed incorrect fuse bits for ATmega328(P)
+	- Flash and EEPROM sizes of selected MCU is shown
+	- Flash and EEPROM space used is shown as a little usage bar above .hex/.eep file locations and in console
+	- Fuse bit names have been moved to an external file (bits.xml)
+	- Added options window
+	- Now shows log if MCU autodetect failed
+
+2013-11-20 (v2.1):
+	- No longer need to run as administrator to have the config and presets save correctly
+	- Fixed some typos
+	- Some more under the hood improvements
+
+2013-11-19 (v2.0):
+	- Updated AVRDUDE to v6.0.1
+	- Window title shows AVRDUDE version
+	- AVRDUDE output console moved to main window
+	- Preset to load at startup can be specified in the command line
+	- Sticky presets (load last used preset at startup, if one hasn't been specified in the command line)
+	- Auto detect MCU
+	- Fuse selector
+	- USBasp programmer frequency options
+	- Tool tips setting now saves
+	- "Update available" window now shows a change log
+	- "Update available" window now has "Skip version" instead of "Don't ask again"
+	- "Set fuses" checkbox now defaults to unchecked
+	- Port selection in Linux now shows ttyS*, ttyUSB*, ttyACM* and lp* devices instead of just ttyS*
+	- Buttons to separately write/read/verify the flash/EEPROM/fuses
+	- Popups for saving and deleting presets have been removed, now you type the name into the presets box and save or select the preset to delete and delete it.
+	- GUI redesign
+	- Various under the hood improvements
+
+2013-02-26 (v1.2):
+	- ATmega328 non-P added back to avrdude.conf
+	- Fixed reading high and low fuses the wrong way around
+	- Fixed if a textbox is full, selecting its contents and typing to replace text didn't work
+	- Fixed wonky console window in Linux
+	- Added right click options to console window (only seems to work in Windows)
+
+2013-02-25 (v1.1):
+	- Now only requires .NET Framework 2.0 SP1 instead of 4.0
+	- Updated AVRDUDE to v5.11.1 from MHV AVR Tools (http://www.makehackvoid.com/project/mhvavrtools)
+	- Fixed having to copy avrdude binary in Linux/OSX
+	- Added verbosity level option
+
+2013-02-17 (v1.0):
+	- Initial release
