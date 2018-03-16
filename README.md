@@ -47,7 +47,8 @@ unzip the entire contents into their respective folders.
     folder<img src="media/image2.png" width="601" height="253" />
 
 -   Open the respective folder which corresponds to your printer setup.
-    Eg mine is (A8- fullgraphicslcd-autolevel- front left sensor)
+    Eg mine is (A8- fullgraphicslcd-autolevel- front left sensor) 
+    for the Tronxy XY-08N use (A8- 5buttonkeypad- autolevel- front left sensor\12mm  sensor)
 
 -   In here you will also find the printable sensor mount for which
     corresponds to the configuration selected
