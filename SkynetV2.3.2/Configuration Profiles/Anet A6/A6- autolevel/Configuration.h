@@ -122,7 +122,9 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000]
  */
-#define BAUDRATE 115200
+#define BAUDRATE 57600
+// 115200
+#warning Non-default Baud rate: 57600
 
 // Enable the Bluetooth serial interface on AT90USB devices
 //#define BLUETOOTH
@@ -461,15 +463,15 @@
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
 #define X_MIN_ENDSTOP_INVERTING true // set to true to invert the logic of the endstop.
 #define Y_MIN_ENDSTOP_INVERTING true // set to true to invert the logic of the endstop.
-#define Z_MIN_ENDSTOP_INVERTING true // set to true to invert the logic of the endstop.
+#define Z_MIN_ENDSTOP_INVERTING true // set to true to invert the logic of the endstop. NOTE: POTENTIALLY OVERRIDDEN IN Conditionals_LCD.h
 #define X_MAX_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
 #define Y_MAX_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
 #define Z_MAX_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
-#define Z_MIN_PROBE_ENDSTOP_INVERTING true // set to true to invert the logic of the probe.
+#define Z_MIN_PROBE_ENDSTOP_INVERTING false // set to true to invert the logic of the probe.
 
 // Enable this feature if all enabled endstop pins are interrupt-capable.
 // This will remove the need to poll the interrupt pins, saving many CPU cycles.
-#define ENDSTOP_INTERRUPTS_FEATURE
+// #define ENDSTOP_INTERRUPTS_FEATURE Disabled due to possible compiler/preprocessor problem MarkMLl
 
 //=============================================================================
 //============================== Movement Settings ============================
@@ -553,11 +555,11 @@
 // For example an inductive probe, or a setup that uses the nozzle to probe.
 // An inductive probe must be deactivated to go below
 // its trigger-point if hardware endstops are active.
-#define FIX_MOUNTED_PROBE
+// #define FIX_MOUNTED_PROBE
 
 // The BLTouch probe emulates a servo probe.
 // The default connector is SERVO 0. Set Z_ENDSTOP_SERVO_NR below to override.
-//#define BLTOUCH
+#define BLTOUCH
 
 // Z Servo Probe, such as an endstop switch on a rotating arm.
 //#define Z_ENDSTOP_SERVO_NR 0
@@ -588,11 +590,20 @@
 
 // BELOW IS FOR THE FRONT MOUNTED SENSOR WITH 3D PRINTED MOUNT FOR ANET A6 kindly given to me by nico!
 //  link to the mount can be found here - http://www.thingiverse.com/thing:2001681
+//
+// #define X_PROBE_OFFSET_FROM_EXTRUDER -1
+// #define Y_PROBE_OFFSET_FROM_EXTRUDER -54
+// #define Z_PROBE_OFFSET_FROM_EXTRUDER -5
 
- #define X_PROBE_OFFSET_FROM_EXTRUDER -1
- #define Y_PROBE_OFFSET_FROM_EXTRUDER -54
- #define Z_PROBE_OFFSET_FROM_EXTRUDER -5
+// BELOW IS FOR MARKMLL'S CUSTOM MOUNT WHICH TUCKS THE SENSOR BEHIND THE BLOWER
+// ON THE LEFT SIDE OF THE EXTRUDER ASSEMBLY.
+//
+// Increasing the Z offset (i.e. making it more +ve) leaves the nozzle further
+// from the bed.
 
+ #define X_PROBE_OFFSET_FROM_EXTRUDER -35
+ #define Y_PROBE_OFFSET_FROM_EXTRUDER +20
+ #define Z_PROBE_OFFSET_FROM_EXTRUDER -3
 
 // X and Y axis travel speed (mm/m) between probes
 #define XY_PROBE_SPEED 10000
@@ -822,10 +833,15 @@
   #define ABL_GRID_MAX_POINTS_Y ABL_GRID_MAX_POINTS_X
 
   // Set the boundaries for probing (where the probe can reach).
-    #define LEFT_PROBE_BED_POSITION   30
-    #define RIGHT_PROBE_BED_POSITION  190
-    #define BACK_PROBE_BED_POSITION   165
-    #define FRONT_PROBE_BED_POSITION  30
+//    #define LEFT_PROBE_BED_POSITION   30
+//    #define RIGHT_PROBE_BED_POSITION  190
+//    #define BACK_PROBE_BED_POSITION   165
+//    #define FRONT_PROBE_BED_POSITION  30
+
+    #define LEFT_PROBE_BED_POSITION   15
+    #define RIGHT_PROBE_BED_POSITION  175
+    #define BACK_PROBE_BED_POSITION   175
+    #define FRONT_PROBE_BED_POSITION  50
 
   // The Z probe minimum outer margin (to validate G29 parameters).
   #define MIN_PROBE_EDGE 10

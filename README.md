@@ -1,6 +1,9 @@
 <img src="media/image1.png" width="601" height="273" />SKYNET 3D V2.3.1
 (Marlin RC8)
 
+NOTE: Use the board definition from MarkMLl/anet-board.git since it fixes
+a missing script file and provides OptiBoot support.
+
 <https://www.facebook.com/skynet3ddevelopment>
 
 <https://www.facebook.com/groups/OFFICIALAnet3DprinterSupportGroup/>
