@@ -85,6 +85,7 @@
 		#define BTN_EN1               11
 		#define BTN_EN2               10
 	#elif ENABLED(ANET_FULL_GRAPHICS_LCD)
+		#define SERVO0_PIN 29
 		#define BEEPER_PIN 17
 
 		#define LCD_PINS_RS        27
@@ -94,9 +95,18 @@
 		#error "You need to select ANET or RepRap Version"
 	#endif
 
-		#define ST7920_DELAY_1 DELAY_0_NOP
-		#define ST7920_DELAY_2 DELAY_1_NOP
-		#define ST7920_DELAY_3 DELAY_2_NOP
+/*
+ * These were originally 0-1-2 to drive the SPI connection to the LCD at
+ * 2MHz, however that is too fast for the A6 which has around 18" (450mm)
+ * of ribbon cable between the 1.5 control board and the LCD board. The
+ * delays below result in the link being driven at 1MHz, and have been
+ * confirmed to have even positioning of the data and select edges relative
+ * to the clock. MarkMLl
+ */
+
+		#define ST7920_DELAY_1 DELAY_2_NOP
+		#define ST7920_DELAY_2 DELAY_2_NOP
+		#define ST7920_DELAY_3 DELAY_4_NOP ; DELAY_2_NOP
 
 		#ifndef ENCODER_STEPS_PER_MENU_ITEM
 			#define ENCODER_STEPS_PER_MENU_ITEM 1
